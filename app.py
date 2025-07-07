@@ -4,10 +4,36 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 import numpy as np
 
-st.set_page_config(page_title="Inventory Management Dashboard", layout="wide")
+st.set_page_config(page_title="Inventory Dashboard", layout="wide")
 
-st.title("📦 Demand-Based Inventory Management System")
-st.caption("Organization: Flavi Dairy Solutions, Ahmedabad")
+# Title
+st.title("📦 Demand-Based Inventory Management System - Flavi Dairy")
+
+# Subtitle / Description
+st.markdown("""
+Welcome to the **Demand-Based Inventory Management System** built for **Flavi Dairy Solutions, Ahmedabad**.
+
+This system helps in:
+- 🧮 **Tracking current stock levels**
+- 🚦 **Categorizing stock** as `Sufficient`, `Low`, or `Critical`
+- ⚠️ **Flagging items that need urgent procurement**
+- 📈 **Visualizing inventory status** with charts and tables
+
+Upload your inventory CSV file below to get started. The system will automatically process your data and provide insights on stock status and procurement priority.
+""")
+
+# Optional: Expandable Section
+with st.expander("ℹ️ About this tool"):
+    st.markdown("""
+    This dashboard was developed as part of an industry-defined project to assist Flavi Dairy in efficient inventory planning. 
+    By analyzing current stock levels and comparing them with minimum thresholds, it enables:
+    
+    - Reduced risk of stockouts
+    - Timely reordering of materials
+    - Better production planning
+
+    Technologies used: **Streamlit**, **Python**, **Pandas**, **Matplotlib**.
+    """)
 
 uploaded_file = st.file_uploader("Upload Inventory CSV File", type=["csv"])
 if uploaded_file:
